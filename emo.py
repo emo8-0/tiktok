@@ -5,6 +5,7 @@ import os
 import requests
 import threading
 import random
+
 code = 'mortada'
 import datetime
 now = datetime.datetime.now()
@@ -14,24 +15,23 @@ ha = now.day
 ho = now.hour
 hs = now.minute
 #############
-H = "\x1b[38;5;208m" # 
-S = '\x1b[1;33m'   # 
-E = '\033[1;31m'  # 
-Z = '\033[1;31m'  # 
-X = '\033[1;33m'  # 
-F = '\033[2;32m'  # 
-C = "\033[2;35m"  # 
-B = '\033[2;36m'  # 
-Y = '\033[1;34m'  # 
-M = '\x1b[1;37m'  # 
-S = '\033[1;33m'  # 
-U = '\x1b[1;37m'  # 
-BRed = '\x1b[1;31m'  # 
-BGreen = '\x1b[1;32m'  # 
-BYellow = '\x1b[1;33m'  # 
-BBlue = '\x1b[1;34m'  # 
-BPurple = '\x1b[1;35m'  # 
-BCyan = '\x1b[1;36m'  # 
+H = "\x1b[38;5;208m" 
+S = '\x1b[1;33m'   
+E = '\033[1;31m'  
+Z = '\033[1;31m'  
+X = '\033[1;33m'  
+F = '\033[2;32m'  
+C = "\033[2;35m"  
+B = '\033[2;36m'  
+Y = '\033[1;34m'  
+M = '\x1b[1;37m'  
+U = '\x1b[1;37m'  
+BRed = '\x1b[1;31m'  
+BGreen = '\x1b[1;32m'  
+BYellow = '\x1b[1;33m'  
+BBlue = '\x1b[1;34m'  
+BPurple = '\x1b[1;35m'  
+BCyan = '\x1b[1;36m'  
 
 try:
  from cfonts import render, say
@@ -39,9 +39,9 @@ except:
     os.system('pip install python-cfonts')
 output = render('emo',colors=['green','red'], align='center')
 print(output)
-token = input(f'\033[1;37#m'+"TOKEN : ")
+token = input(f'\033[1;37m'+"TOKEN : ")
 print('\n')
-iD = input(f'\033[1;37#m'+"ID : ")
+iD = input(f'\033[1;37m'+"ID : ")
 print('\n')
 os.system('clear')
 
@@ -74,9 +74,24 @@ def AA(user):
     except (KeyError, IndexError):
         print(f"{F}Good User : {user}")
         print(f'{X}__'*20)
-        tlg = f'''✅ 𝘜𝘚𝘌𝘙  : {user}
-BY - @emo_80'''
-        requests.post(f"https://api.telegram.org/bot{token}/sendvideo?chat_id={iD}&video=https://t.me/ttivma/3&caption="+str(tlg))
+        
+        # النص الثابت بدون أي تعديلات
+        tlg = f'''🪐𝘜𝘚𝘌𝘙  : {user}
+BY - @emo_80
+- كـوࢪس آخـتـࢪاق الهواتف مدفو؏
+- للمشاهدة مجانا اضغط هنا ⬇️
+https://t.me/+TsJ4qQHuuOExMTcy'''
+        
+        # إرسال الرسالة بدون أي تشفير إضافي
+        url = f"https://api.telegram.org/bot{token}/sendVideo"
+        params = {
+            'chat_id': iD,
+            'video': 'https://t.me/ttivma/3',
+            'caption': tlg
+        }
+        
+        requests.post(url, data=params)
+        
     except requests.exceptions.ConnectionError:
         print("النت ضعيف حاول مجددآ ")
 
