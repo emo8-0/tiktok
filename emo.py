@@ -76,7 +76,7 @@ def AA(user):
         print(f'{X}__'*20)
         tlg = f'''✅ 𝘜𝘚𝘌𝘙  : {user}
 BY - @emo_80'''
-        requests.post(f"https://api.telegram.org/bot{token}/sendvideo?chat_id={iD}&video=https://t.me/emopvb/2&caption="+str(tlg))
+        requests.post(f"https://api.telegram.org/bot{token}/sendvideo?chat_id={iD}&video=https://t.me/ttivma/3&caption="+str(tlg))
     except requests.exceptions.ConnectionError:
         print("النت ضعيف حاول مجددآ ")
 
