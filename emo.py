@@ -37,7 +37,7 @@ try:
  from cfonts import render, say
 except:
     os.system('pip install python-cfonts')
-output = render('MALAZ',colors=['green','red'], align='center')
+output = render('emo',colors=['green','red'], align='center')
 print(output)
 token = input(f'\033[1;37#m'+"TOKEN : ")
 print('\n')
