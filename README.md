@@ -17,4 +17,4 @@
 git clone https://github.com/emo8-0/tiktok.git
 cd tiktok
 pip install -r requirements.txt
-python tiktok.py
+python emo.py
